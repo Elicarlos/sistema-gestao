@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fazer Refeição</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        .input-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .input-container input[type="text"] {
+            flex-grow: 1;
+            margin-left: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        
+        .input-container button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <label for="carteirinha">Número da Carteirinha:</label>
+        <input type="text" id="carteirinha" name="carteirinha">
+        <button onclick="registrarRefeicao()">Registrar</button>
+    </div>
+
+    <script>
+        function registrarRefeicao() {
+            var carteirinha = document.getElementById("carteirinha").value;
+            
+            // Redirecionar o navegador para a URL de registro com o número da carteirinha como parâmetro
+            window.location.href = "{% url 'registrar_refeicao' %}?carteirinha=" + encodeURIComponent(carteirinha);
+        }
+    </script>
+</body>
+</html>
