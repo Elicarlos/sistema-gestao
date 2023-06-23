@@ -1,0 +1,7 @@
+<!-- cadastro_empresa.html -->
+<h1>Cadastrar Empresa</h1>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Cadastrar</button>
+</form>
